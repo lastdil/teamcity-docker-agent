@@ -28,7 +28,6 @@ RUN apt-get update && \
     apt-cache policy docker-ce && \
     apt-get update && \
     apt-get install -y docker-ce=18.06.1~ce~3-0~ubuntu systemd && \
-    apt-get install -y git && \
     apt-get install -y nodejs && \
     apt-get install -y npm && \
     systemctl disable docker && \
