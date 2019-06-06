@@ -28,6 +28,9 @@ RUN apt-get update && \
     apt-cache policy docker-ce && \
     apt-get update && \
     apt-get install -y docker-ce=18.06.1~ce~3-0~ubuntu systemd && \
+    apt-get install -y git && \
+    apt-get install -y nodejs && \
+    apt-get install -y npm && \
     systemctl disable docker && \
     curl -SL https://github.com/docker/compose/releases/download/1.23.2/docker-compose-Linux-x86_64 -o /usr/local/bin/docker-compose && chmod +x /usr/local/bin/docker-compose && \
     \
