@@ -1,4 +1,4 @@
-FROM teamcity-minimal-agent:latest
+FROM jetbrains/teamcity-minimal-agent:latest
 
 LABEL dockerImage.teamcity.version="latest" \
       dockerImage.teamcity.buildNumber="latest"
