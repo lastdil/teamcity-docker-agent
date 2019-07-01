@@ -32,6 +32,7 @@ RUN apt-get update && \
     apt-get install -y nodejs && \
     apt-get install -y npm && \
     apt-get install -y awscli && \
+    apt-get install -y zip && \
     systemctl disable docker && \
     curl -SL https://github.com/docker/compose/releases/download/1.23.2/docker-compose-Linux-x86_64 -o /usr/local/bin/docker-compose && chmod +x /usr/local/bin/docker-compose && \
     \
