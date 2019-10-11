@@ -18,7 +18,7 @@ ENV DOTNET_CLI_TELEMETRY_OPTOUT=true \
     GIT_SSH_VARIANT=ssh \
     # Install .NET Core SDK
     DOTNET_SDK_VERSION=2.2.103 \
-    DEBIAN_FRONTEND=noninteractive 
+    DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && \
     apt-get install -y git mercurial apt-transport-https ca-certificates software-properties-common && \
@@ -28,13 +28,17 @@ RUN apt-get update && \
     \
     apt-cache policy docker-ce && \
     apt-get update && \
+    apt-get install -y  docker-ce=5:19.03.3~3-0~ubuntu-bionic \
+                        docker-ce-cli=5:19.03.3~3-0~ubuntu-bionic \
+                        containerd.io=1.2.6-3 \
+                        systemd && \
     apt-get install -y docker-ce=18.06.1~ce~3-0~ubuntu systemd && \
     apt-get install -y nodejs && \
     apt-get install -y npm && \
     apt-get install -y awscli && \
     apt-get install -y zip && \
     systemctl disable docker && \
-    curl -SL https://github.com/docker/compose/releases/download/1.23.2/docker-compose-Linux-x86_64 -o /usr/local/bin/docker-compose && chmod +x /usr/local/bin/docker-compose && \
+    curl -SL "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose && chmod +x /usr/local/bin/docker-compose && \
     \
     apt-get install -y --no-install-recommends \
             fontconfig \
