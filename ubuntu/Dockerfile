@@ -32,7 +32,6 @@ RUN apt-get update && \
                         docker-ce-cli=5:19.03.3~3-0~ubuntu-bionic \
                         containerd.io=1.2.6-3 \
                         systemd && \
-    apt-get install -y docker-ce=18.06.1~ce~3-0~ubuntu systemd && \
     apt-get install -y nodejs && \
     apt-get install -y npm && \
     apt-get install -y awscli && \
